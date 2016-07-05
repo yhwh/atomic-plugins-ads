@@ -160,6 +160,13 @@
     }
 }
 
+- (void)didClickRewardedVideo:(CBLocation)location
+{
+    if (_currentReward && _currentReward.delegate && [_currentReward.delegate respondsToSelector:@selector(adInterstitialClick:)]) {
+        [_currentReward.delegate adInterstitialClick:_currentVideo];
+    }
+}
+
 - (void)didCompleteRewardedVideo:(CBLocation)location withReward:(int)amount;
 {
     if (_currentReward && _currentReward.delegate && [_currentReward.delegate respondsToSelector:@selector(adInterstitialDidCompleteRewardedVideo:withReward:andError:)]) {

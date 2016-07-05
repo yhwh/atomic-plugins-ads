@@ -243,6 +243,11 @@ static inline NSString * GET_ID(CDVInvokedUrlCommand * command)
     [self callListener:@[@"dismiss", [self findInterstitialId:interstitial]] callbackId:_bannerListenerId];
 }
 
+-(void)adInterstitialClick:(LDAdInterstitial *)interstitial
+{
+    [self callListener:@[@"click", [self findInterstitialId:interstitial]] callbackId:_bannerListenerId];
+}
+
 - (void)adInterstitialDidCompleteRewardedVideo:(LDAdInterstitial *)interstitial withReward:(LDRewardedVideoReward*) reward andError:(NSError *) error
 {
     

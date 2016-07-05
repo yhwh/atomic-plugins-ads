@@ -88,6 +88,7 @@ typedef NSObject<LDRewardedVideoRewardProtocol> LDRewardedVideoReward;
  */
 - (void)adInterstitialWillDisappear:(LDAdInterstitial *)interstitial;
 
+- (void)adInterstitialClick:(LDAdInterstitial *)interstitial;
 
 /**
  *  Sent when a rewarded video interstitial is completed (either succeeded or skipped)
